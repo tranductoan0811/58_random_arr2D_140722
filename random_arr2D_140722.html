@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+  </head>
+  <body>
+    <h3>Tìm value, index của số lớn nhất, nhỏ nhất trong mảng 2 chiều số ngẫu nhiên</h3>
+    <script src="display_arr2D.js"></script>
+    <script src="sum_arr2D.js"></script>
+    <script src="findMax_arr2D.js"></script>
+    <script src="findMin_arr2D.js"></script>
+
+    <script>
+      // tạo mảng 2 chiều số ngẫu nhiên, kích thước dòng, cột theo nhập vào
+      let row_num = prompt("Nhập số lượng dòng: ");
+      let col_num = prompt("Nhập số lượng cột: ");
+
+      let arr2D = [];
+      for (let i = 0; i < row_num; i++) {
+        arr2D[i] = []; // biến này sẽ tạo mới mảng con mỗi lần biến i chạy
+          for (let j = 0; j < col_num; j++) {
+
+            arr2D[i][j] = Math.floor(Math.random()*100);
+                
+          }
+      }
+
+      // hiển thị các phần từ của mảng
+      document.write("<br>"+ " Mảng 2 chiều số ngẫu nhiên có: " + row_num + " dòng,  " + col_num + " cột như sau: " + "<br>");
+      document.write("<br>");
+      display_2Darr(arr2D);
+
+      // invoke function
+      let tong_arr = sum_2Darr(arr2D);
+      let [max_value, row_value_max, col_value_max] = max_2Darr(arr2D);
+      let [min_value, row_value_min, col_value_min] = min_2Darr(arr2D);
+
+      document.write("<br>" + "****************" + "<br>" + " Tổng các phần tử trong mảng là: " + tong_arr + "<br>");
+      document.write(" Max item is: " + max_value + " , ví trí hàng: " + row_value_max + ", cột : " + col_value_max + "<br>");
+      document.write(" Min item is: " + min_value + " , ví trí hàng: " + row_value_min + ", cột : " + col_value_min + "<br>");
+
+    </script>
+
+
+  </body>
+
+</html>
+
+
+<!-- // for (let i = 0; i < row_num; i++) {
+  //   for (let j =0; j < col_num; j++) {
+
+  //     document.write(arr2D[i][j] + " ");
+
+  // }
+  // document.write("<br>");
+  // } -->
